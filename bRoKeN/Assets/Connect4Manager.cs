@@ -30,6 +30,21 @@ public class Connect4Manager : MonoBehaviour
     public float minDelay = 1.0f;
     public float maxDelay = 2.0f;
 
+    // Audio clips for various events.
+    [Tooltip("Sound played when the player places a disc.")]
+    public AudioClip playerPlaceSound;
+    [Tooltip("Sound played when the computer places a disc.")]
+    public AudioClip computerPlaceSound;
+    [Tooltip("Sound played when the puzzle resets.")]
+    public AudioClip resetSound;
+    [Tooltip("Sound played when the player wins.")]
+    public AudioClip playerWinSound;
+    [Tooltip("Sound played when the computer wins.")]
+    public AudioClip computerWinSound;
+
+    // Reference to an AudioSource component.
+    private AudioSource audioSource;
+
     // Internal board state where board[col, row] stores:
     // 0 = empty, 1 = player disc, 2 = computer disc.
     private int[,] board;
@@ -44,10 +59,16 @@ public class Connect4Manager : MonoBehaviour
     {
         board = new int[numColumns, numRows];
         InitializeBoard();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogWarning("No AudioSource found on Connect4Manager object. Please add one.");
+        }
     }
 
     /// <summary>
     /// Resets the board state and clears all disc objects.
+    /// Plays the reset sound effect.
     /// </summary>
     void InitializeBoard()
     {
@@ -64,6 +85,12 @@ public class Connect4Manager : MonoBehaviour
         }
         activeDiscs.Clear();
         inputEnabled = true;
+
+        // Play the reset sound effect.
+        if (audioSource != null && resetSound != null)
+        {
+            audioSource.PlayOneShot(resetSound);
+        }
     }
 
     /// <summary>
@@ -89,6 +116,15 @@ public class Connect4Manager : MonoBehaviour
                 GameObject discPrefab = (discType == DiscType.Player) ? playerDiscPrefab : computerDiscPrefab;
                 GameObject discInstance = Instantiate(discPrefab, slotTransform.position, slotTransform.rotation);
                 activeDiscs.Add(discInstance);
+
+                // Play the appropriate disc placement sound effect.
+                if (audioSource != null)
+                {
+                    if (discType == DiscType.Player && playerPlaceSound != null)
+                        audioSource.PlayOneShot(playerPlaceSound);
+                    else if (discType == DiscType.Computer && computerPlaceSound != null)
+                        audioSource.PlayOneShot(computerPlaceSound);
+                }
                 return row;
             }
         }
@@ -119,11 +155,13 @@ public class Connect4Manager : MonoBehaviour
             if (CheckWin(column, row, (int)DiscType.Player))
             {
                 Debug.Log("Player won!");
+                if (audioSource != null && playerWinSound != null)
+                    audioSource.PlayOneShot(playerWinSound);
                 inputEnabled = false;  // Freeze the board so no further moves can be made.
                 return;
             }
 
-            // If the player's move filled the topmost slot in that column, reset the board.
+            // If the player's move filled the top-most slot in that column, reset the board.
             if (IsColumnFull(column))
             {
                 Debug.Log("Column " + column + " is full. Resetting board.");
@@ -153,9 +191,7 @@ public class Connect4Manager : MonoBehaviour
         for (int col = 0; col < numColumns; col++)
         {
             if (!IsColumnFull(col))
-            {
                 validColumns.Add(col);
-            }
         }
 
         if (validColumns.Count > 0)
@@ -167,6 +203,8 @@ public class Connect4Manager : MonoBehaviour
                 if (CheckWin(chosenColumn, row, (int)DiscType.Computer))
                 {
                     Debug.Log("Computer won!");
+                    if (audioSource != null && computerWinSound != null)
+                        audioSource.PlayOneShot(computerWinSound);
                     yield return new WaitForSeconds(0.5f);
                     StartCoroutine(ResetBoardAfterDelay());
                     yield break;
@@ -201,10 +239,10 @@ public class Connect4Manager : MonoBehaviour
     {
         // Direction vectors: horizontal, vertical, diagonal (up-right), and diagonal (down-right).
         int[][] directions = new int[][] {
-            new int[] { 1, 0 },   // Horizontal
-            new int[] { 0, 1 },   // Vertical
-            new int[] { 1, 1 },   // Diagonal up-right
-            new int[] { 1, -1 }   // Diagonal down-right
+            new int[] { 1, 0 },
+            new int[] { 0, 1 },
+            new int[] { 1, 1 },
+            new int[] { 1, -1 }
         };
 
         foreach (var dir in directions)
