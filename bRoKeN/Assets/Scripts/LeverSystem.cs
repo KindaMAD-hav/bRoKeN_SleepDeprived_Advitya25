@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class LeverSystem : MonoBehaviour
 {
@@ -14,8 +15,33 @@ public class LeverSystem : MonoBehaviour
     [SerializeField]
     private int[] correctSequence = new int[] { 1, 3, 2, 4 }; // Set this in Inspector
 
+    [Header("Wire Dependency")]
+    [Tooltip("The wire that must be glowing to activate the lever system")]
+    public WireGlowController requiredWire; // Reference to the wire that controls functionality
+
+    private bool systemEnabled = false; // Tracks if the system is active
+
+    private void Start()
+    {
+        if (requiredWire != null && !requiredWire.isGlowing)
+        {
+            Debug.Log("[LeverSystem] Waiting for the required wire to glow...");
+            StartCoroutine(WaitForRequiredWire());
+        }
+        else
+        {
+            systemEnabled = true; // Enable functionality if the wire is already glowing
+        }
+    }
+
     public void LeverActivated(int leverID, bool isOn)
     {
+        if (!systemEnabled)
+        {
+            Debug.LogWarning("[LeverSystem] System is currently disabled. Waiting for the required wire to turn on.");
+            return;
+        }
+
         leverStates[leverID] = isOn;
 
         if (isOn)
@@ -26,6 +52,8 @@ public class LeverSystem : MonoBehaviour
 
     private void CheckProgress()
     {
+        if (!systemEnabled) return;
+
         List<int> currentSequence = new List<int>();
         foreach (var lever in leverStates)
         {
@@ -41,6 +69,12 @@ public class LeverSystem : MonoBehaviour
 
     public bool ValidateSequence()
     {
+        if (!systemEnabled)
+        {
+            Debug.LogWarning("[LeverSystem] System is currently disabled. Waiting for the required wire to turn on.");
+            return false;
+        }
+
         List<int> currentSequence = new List<int>();
         foreach (var lever in leverStates)
         {
@@ -79,6 +113,12 @@ public class LeverSystem : MonoBehaviour
 
     public void ResetLevers()
     {
+        if (!systemEnabled)
+        {
+            Debug.LogWarning("[LeverSystem] System is currently disabled. Waiting for the required wire to turn on.");
+            return;
+        }
+
         leverStates.Clear();
 
         // Find and reset all lever objects
@@ -87,5 +127,17 @@ public class LeverSystem : MonoBehaviour
         {
             lever.ResetLever();
         }
+    }
+
+    private IEnumerator WaitForRequiredWire()
+    {
+        // Wait until the required wire is glowing
+        while (requiredWire != null && !requiredWire.isGlowing)
+        {
+            yield return null; // Wait until the wire becomes glowing
+        }
+
+        Debug.Log("[LeverSystem] Required wire is glowing! System functionality enabled.");
+        systemEnabled = true; // Enable the system
     }
 }
