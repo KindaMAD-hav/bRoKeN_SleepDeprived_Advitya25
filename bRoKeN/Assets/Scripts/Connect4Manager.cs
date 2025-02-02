@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video; // Required for VideoPlayer
 
 public class Connect4Manager : MonoBehaviour
 {
@@ -49,6 +50,14 @@ public class Connect4Manager : MonoBehaviour
     // Reference to an AudioSource component.
     private AudioSource audioSource;
 
+    // VideoPlayer to play a video when the puzzle is solved (player wins).
+    [Header("Video Player")]
+    public VideoPlayer winVideo; // Assign your VideoPlayer component here via the Inspector
+
+    // Reference to the canvas that holds the VideoPlayer.
+    // This canvas should be disabled on Awake.
+    public GameObject endCanvas;
+
     // Internal board state where board[col, row] stores:
     // 0 = empty, 1 = player disc, 2 = computer disc.
     private int[,] board;
@@ -68,6 +77,12 @@ public class Connect4Manager : MonoBehaviour
         if (audioSource == null)
         {
             Debug.LogWarning("No AudioSource found on Connect4Manager object. Please add one.");
+        }
+
+        // Ensure the end canvas is disabled on start.
+        if (endCanvas != null)
+        {
+            endCanvas.SetActive(false);
         }
 
         // Freeze gameplay until the required wire is turned on
@@ -154,7 +169,18 @@ public class Connect4Manager : MonoBehaviour
                 // Trigger wire flicker effect when the player wins
                 TriggerWireFlickerEffect();
 
-                inputEnabled = false;
+                // Enable the canvas and play the win video.
+                if (winVideo != null)
+                {
+                    if (endCanvas != null)
+                        endCanvas.SetActive(true);
+
+                    winVideo.Play();
+                    // Subscribe to the event to know when the video finishes.
+                    winVideo.loopPointReached += OnVideoFinished;
+                }
+
+                inputEnabled = false;  // Freeze gameplay after a win
                 return;
             }
 
@@ -283,5 +309,17 @@ public class Connect4Manager : MonoBehaviour
         }
         Debug.Log("Required wire is glowing! Gameplay unlocked.");
         inputEnabled = true; // Enable gameplay
+    }
+
+    // This method is called when the win video finishes playing.
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        // Unsubscribe from the event so it doesn't fire again.
+        vp.loopPointReached -= OnVideoFinished;
+        // Disable the canvas after the video is complete.
+        if (endCanvas != null)
+        {
+            endCanvas.SetActive(false);
+        }
     }
 }
