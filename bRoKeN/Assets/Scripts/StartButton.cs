@@ -46,7 +46,7 @@ public class StartButton : MonoBehaviour
         canvasGroup.alpha = 1f; // Ensure the canvas is fully opaque
 
         // Wait for an additional 10 seconds
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(7f);
 
         // Deactivate the intermediate canvas
         intermediateCanvas.SetActive(false);
