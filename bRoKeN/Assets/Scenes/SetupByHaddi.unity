@@ -13528,6 +13528,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6658476787913114281, guid: 2ba15dd6b10a43d47b5e132bdedeb42d, type: 3}
+      propertyPath: requiredWire
+      value: 
+      objectReference: {fileID: 987102179}
+    - target: {fileID: 6658476787913114281, guid: 2ba15dd6b10a43d47b5e132bdedeb42d, type: 3}
       propertyPath: wiresToFlicker.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -20985,7 +20989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6715872264409274582, guid: 1236ff8f5b51e9c468ee040aa999cda7, type: 3}
       propertyPath: wiresToTurnOn.Array.size
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6715872264409274582, guid: 1236ff8f5b51e9c468ee040aa999cda7, type: 3}
       propertyPath: 'wiresToTurnOn.Array.data[0]'
@@ -21057,6 +21061,10 @@ PrefabInstance:
       objectReference: {fileID: 1851717889}
     - target: {fileID: 6715872264409274582, guid: 1236ff8f5b51e9c468ee040aa999cda7, type: 3}
       propertyPath: 'wiresToTurnOn.Array.data[17]'
+      value: 
+      objectReference: {fileID: 987102179}
+    - target: {fileID: 6715872264409274582, guid: 1236ff8f5b51e9c468ee040aa999cda7, type: 3}
+      propertyPath: 'wiresToTurnOn.Array.data[18]'
       value: 
       objectReference: {fileID: 987102179}
     - target: {fileID: 7847000400371431102, guid: 1236ff8f5b51e9c468ee040aa999cda7, type: 3}
@@ -50491,63 +50499,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4270498886745231061, guid: e481dc4cae097a249ac573d8d4013945, type: 3}
---- !u!1001 &1568740581
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 240268432487221979, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -51.914
-      objectReference: {fileID: 0}
-    - target: {fileID: 240268432487221979, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.541
-      objectReference: {fileID: 0}
-    - target: {fileID: 240268432487221979, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -50.312
-      objectReference: {fileID: 0}
-    - target: {fileID: 240268432487221979, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7576382
-      objectReference: {fileID: 0}
-    - target: {fileID: 240268432487221979, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.009971946
-      objectReference: {fileID: 0}
-    - target: {fileID: 240268432487221979, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.6524127
-      objectReference: {fileID: 0}
-    - target: {fileID: 240268432487221979, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.015574996
-      objectReference: {fileID: 0}
-    - target: {fileID: 240268432487221979, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 2.031
-      objectReference: {fileID: 0}
-    - target: {fileID: 240268432487221979, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 441.454
-      objectReference: {fileID: 0}
-    - target: {fileID: 240268432487221979, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.607
-      objectReference: {fileID: 0}
-    - target: {fileID: 4478814778935348766, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
-      propertyPath: m_Name
-      value: L (13)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
 --- !u!1 &1569599301 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3233277448567810316, guid: 2d8c8a533aae81e498b7b6aa49f3675d, type: 3}
@@ -96411,6 +96362,7 @@ MonoBehaviour:
   audioSource: {fileID: 4235454941603185753}
   completionSound: {fileID: 8300000, guid: 3e89b37f20c18c4429d23ddf7acb85a0, type: 3}
   loopMusic: {fileID: 8300000, guid: 3e89b37f20c18c4429d23ddf7acb85a0, type: 3}
+  requiredWire: {fileID: 0}
   wiresToFlicker: []
 --- !u!23 &6663134071147671202
 MeshRenderer:
@@ -105789,7 +105741,6 @@ SceneRoots:
   - {fileID: 225784953}
   - {fileID: 554001339}
   - {fileID: 146798284}
-  - {fileID: 1568740581}
   - {fileID: 2142422281}
   - {fileID: 69265553}
   - {fileID: 125826409}

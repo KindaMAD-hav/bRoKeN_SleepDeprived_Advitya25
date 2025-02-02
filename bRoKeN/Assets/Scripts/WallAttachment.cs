@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class WallAttachment : MonoBehaviour
 {
@@ -22,7 +23,10 @@ public class WallAttachment : MonoBehaviour
     public AudioClip loopMusic; // The audio clip that will loop after the puzzle is completed
 
     [Header("Wire Control")]
+    public WireGlowController requiredWire; // The wire that must be glowing to enable functionality
     public List<WireGlowController> wiresToFlicker; // List of wires to flicker and glow
+
+    private bool functionalityEnabled = false; // Flag to control script functionality
 
     private void Start()
     {
@@ -48,10 +52,26 @@ public class WallAttachment : MonoBehaviour
         {
             Debug.LogError("[WallAttachment] Loop music not assigned!");
         }
+
+        // Freeze functionality until the required wire is glowing
+        if (requiredWire != null && !requiredWire.isGlowing)
+        {
+            StartCoroutine(WaitForRequiredWire());
+        }
+        else
+        {
+            functionalityEnabled = true; // Enable functionality immediately if no required wire is set or it's already glowing
+        }
     }
 
     public void AttachObject(PickableObject pickable)
     {
+        if (!functionalityEnabled)
+        {
+            Debug.LogWarning("[WallAttachment] Functionality is currently disabled. Waiting for the required wire to turn on.");
+            return;
+        }
+
         if (pickable == null)
         {
             Debug.LogError("[WallAttachment] PickableObject is null!");
@@ -125,5 +145,16 @@ public class WallAttachment : MonoBehaviour
         {
             Debug.LogWarning("[WallAttachment] No wires assigned to flicker and glow!");
         }
+    }
+
+    private IEnumerator WaitForRequiredWire()
+    {
+        Debug.Log("[WallAttachment] Waiting for the required wire to be turned on...");
+        while (requiredWire != null && !requiredWire.isGlowing)
+        {
+            yield return null; // Wait until the required wire is glowing
+        }
+        Debug.Log("[WallAttachment] Required wire is glowing! Functionality enabled.");
+        functionalityEnabled = true;
     }
 }
