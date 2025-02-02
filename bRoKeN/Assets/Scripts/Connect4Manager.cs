@@ -59,6 +59,7 @@ public class Connect4Manager : MonoBehaviour
     {
         board = new int[numColumns, numRows];
         InitializeBoard();
+        Debug.Log("board on");
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -72,6 +73,7 @@ public class Connect4Manager : MonoBehaviour
     /// </summary>
     void InitializeBoard()
     {
+        
         for (int col = 0; col < numColumns; col++)
         {
             for (int row = 0; row < numRows; row++)

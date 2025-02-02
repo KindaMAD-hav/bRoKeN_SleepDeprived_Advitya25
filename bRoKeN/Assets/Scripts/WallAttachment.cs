@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class WallAttachment : MonoBehaviour
 {
@@ -9,14 +10,19 @@ public class WallAttachment : MonoBehaviour
         public int requiredGearID; // Only gears with this ID can attach here
     }
 
+    [Header("Attach Points")]
     public AttachPoint[] attachPoints;
     private int attachedObjects = 0;
 
+    [Header("Wall Animation and Audio")]
     public Animator wallAnimator; // Reference to the wall's Animator component
     public string animationTrigger = "AllGearsPlaced"; // Name of the animation trigger
     public AudioSource audioSource; // Reference to the AudioSource component
     public AudioClip completionSound; // The audio clip to play when all gears are attached
     public AudioClip loopMusic; // The audio clip that will loop after the puzzle is completed
+
+    [Header("Wire Control")]
+    public List<WireGlowController> wiresToFlicker; // List of wires to flicker and glow
 
     private void Start()
     {
@@ -79,22 +85,45 @@ public class WallAttachment : MonoBehaviour
 
     private void PlayCompletionAnimationAndSound()
     {
+        // Trigger animation
         if (wallAnimator != null)
         {
-            wallAnimator.SetTrigger(animationTrigger); // Trigger the animation
+            wallAnimator.SetTrigger(animationTrigger);
         }
 
+        // Play completion sound
         if (audioSource != null && completionSound != null)
         {
-            audioSource.PlayOneShot(completionSound); // Play the completion sound
+            audioSource.PlayOneShot(completionSound);
         }
 
         // Set the loop music to play continuously after the puzzle is completed
         if (audioSource != null && loopMusic != null)
         {
-            audioSource.clip = loopMusic; // Set the loop music clip
-            audioSource.loop = true; // Enable looping
-            audioSource.Play(); // Start playing the loop music
+            audioSource.clip = loopMusic;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+
+        // Trigger wire flicker and glow
+        TriggerWireFlickerAndGlow();
+    }
+
+    private void TriggerWireFlickerAndGlow()
+    {
+        if (wiresToFlicker != null && wiresToFlicker.Count > 0)
+        {
+            foreach (WireGlowController wire in wiresToFlicker)
+            {
+                if (wire != null)
+                {
+                    StartCoroutine(wire.FlickerThenGlow());
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("[WallAttachment] No wires assigned to flicker and glow!");
         }
     }
 }
