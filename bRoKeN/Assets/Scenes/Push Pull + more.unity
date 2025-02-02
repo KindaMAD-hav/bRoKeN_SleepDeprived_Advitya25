@@ -30706,11 +30706,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageBox: {fileID: 166348081}
-  message: No Power in ToonTown, thats weird.... maybe ill go and check the powerbox
-    for it
+  message: ooo!!! a Game of Connect 4? well its pretty easy for a professional like
+    me, all i need to do is just get 4 of my color in line right ? that should be
+    easy
   fadeDuration: 0.5
   customFont: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  displayTime: 7.45
+  displayTime: 12.8
 --- !u!65 &982997738
 BoxCollider:
   m_ObjectHideFlags: 0
