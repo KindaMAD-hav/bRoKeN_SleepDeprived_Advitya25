@@ -361,6 +361,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4441,6 +4445,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4799,6 +4807,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4891,6 +4903,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     - target: {fileID: 8849011022367308788, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_Color.b
@@ -5345,6 +5361,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5410,6 +5430,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6214,6 +6238,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7614,6 +7642,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8661,7 +8693,7 @@ GameObject:
   - component: {fileID: 291539662}
   m_Layer: 0
   m_Name: CityLight
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9306,7 +9338,7 @@ GameObject:
   - component: {fileID: 312013154}
   m_Layer: 0
   m_Name: CityLight (1)
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10914,7 +10946,7 @@ GameObject:
   - component: {fileID: 377063796}
   m_Layer: 0
   m_Name: CityLight
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11579,6 +11611,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11806,6 +11842,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12086,7 +12126,7 @@ GameObject:
   - component: {fileID: 417755368}
   m_Layer: 0
   m_Name: HouseLight (4)
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12482,14 +12522,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3296792313324005677, guid: d31d92f2179d1404bbf2ba517c73c44c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1789887788}
   m_SourcePrefab: {fileID: 100100000, guid: d31d92f2179d1404bbf2ba517c73c44c, type: 3}
 --- !u!114 &427555299 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8004107512998525519, guid: d31d92f2179d1404bbf2ba517c73c44c, type: 3}
   m_PrefabInstance: {fileID: 427555298}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1789887783}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66ad8fa4af4b7114983db36c0416f620, type: 3}
@@ -13299,6 +13342,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13668,7 +13715,7 @@ GameObject:
   - component: {fileID: 469831665}
   m_Layer: 0
   m_Name: CityLight
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13831,6 +13878,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15512,7 +15563,7 @@ GameObject:
   - component: {fileID: 494078219}
   m_Layer: 0
   m_Name: CityLight
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15997,6 +16048,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18539,6 +18594,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18697,6 +18756,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19800,6 +19863,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21449,6 +21516,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22406,7 +22477,7 @@ GameObject:
   - component: {fileID: 706311350}
   m_Layer: 0
   m_Name: HouseLight (5)
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22775,6 +22846,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23201,6 +23276,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23787,6 +23866,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24412,6 +24495,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24959,6 +25046,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     - target: {fileID: 8849011022367308788, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_Color.b
@@ -26401,6 +26492,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26996,6 +27091,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28765,6 +28864,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30288,7 +30391,7 @@ GameObject:
   - component: {fileID: 946747227}
   m_Layer: 0
   m_Name: HouseLight (1)
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31992,7 +32095,7 @@ GameObject:
   - component: {fileID: 990852343}
   m_Layer: 0
   m_Name: CityLight
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34273,6 +34376,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35075,6 +35182,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35323,6 +35434,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35807,6 +35922,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36089,7 +36208,7 @@ GameObject:
   - component: {fileID: 1157003361}
   m_Layer: 0
   m_Name: HouseLight (3)
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38399,6 +38518,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39588,6 +39711,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39925,6 +40052,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40152,6 +40283,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43050,6 +43185,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43546,6 +43685,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43747,6 +43890,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43944,7 +44091,7 @@ GameObject:
   - component: {fileID: 1388462925}
   m_Layer: 0
   m_Name: CityLight
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45134,7 +45281,7 @@ GameObject:
   - component: {fileID: 1412799189}
   m_Layer: 0
   m_Name: HouseLight (2)
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48667,7 +48814,7 @@ GameObject:
   - component: {fileID: 1549429984}
   m_Layer: 0
   m_Name: HouseLight
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50880,6 +51027,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50940,6 +51091,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -52657,6 +52812,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -53329,6 +53488,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -53974,6 +54137,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -56239,6 +56406,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -57342,6 +57513,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5518948614002533901, guid: 9001dc899aa243649881812f2f7d8937, type: 3}
+--- !u!1 &1789887783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3296792313324005677, guid: d31d92f2179d1404bbf2ba517c73c44c, type: 3}
+  m_PrefabInstance: {fileID: 427555298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1789887788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789887783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de6dc7a8213696b4b9ad59382282afda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wireController: {fileID: 427555299}
+  enableOnGlowing: 1
+  cityLightsTag: CityLights
+  offMaterial: {fileID: 0}
+  onMaterial: {fileID: 0}
+  flickerDuration: 1.5
+  flickerInterval: 0.1
 --- !u!1 &1790461458 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7987555098975385791, guid: 2d8c8a533aae81e498b7b6aa49f3675d, type: 3}
@@ -57564,6 +57759,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -59642,6 +59841,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -60257,7 +60460,7 @@ GameObject:
   - component: {fileID: 1896770286}
   m_Layer: 0
   m_Name: HouseLight
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60744,7 +60947,7 @@ GameObject:
   - component: {fileID: 1905014694}
   m_Layer: 0
   m_Name: HouseLight
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61373,6 +61576,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -64566,7 +64773,7 @@ GameObject:
   - component: {fileID: 1987230907}
   m_Layer: 0
   m_Name: CityLight (1)
-  m_TagString: Untagged
+  m_TagString: CityLights
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64729,6 +64936,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -91202,6 +91413,10 @@ PrefabInstance:
     - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225128287816708408, guid: 8a6653dd04e3e5446a73f071ae618426, type: 3}
+      propertyPath: m_TagString
+      value: CityLights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
