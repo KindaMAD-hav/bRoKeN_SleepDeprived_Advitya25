@@ -49,7 +49,7 @@ public class StartButton : MonoBehaviour
         yield return new WaitForSeconds(7f);
 
         // Deactivate the intermediate canvas
-        intermediateCanvas.SetActive(false);
+        //intermediateCanvas.SetActive(false);
 
         // Load the next scene
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
