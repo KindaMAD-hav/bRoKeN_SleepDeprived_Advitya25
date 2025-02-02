@@ -25,7 +25,6 @@ public class PlayerInteraction : MonoBehaviour
                         return;
                     }
                 }
-
                 // Check for a lever interaction
                 Lever lever = hit.collider.GetComponent<Lever>();
                 if (lever != null)
@@ -35,12 +34,15 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
         }
-
-        if (Input.GetMouseButtonDown(1)) // Right-click to pick up
+        if (Input.GetMouseButtonDown(1)) // Right-click to pick up or drop
         {
-            if (heldObject == null) // Only pick up if not holding anything
+            if (heldObject == null) // If not holding anything, try to pick up
             {
                 TryPickUp();
+            }
+            else // If holding something, drop it
+            {
+                DropObject();
             }
         }
     }
@@ -55,8 +57,17 @@ public class PlayerInteraction : MonoBehaviour
             if (pickable != null)
             {
                 heldObject = pickable;
-                pickable.PickUpObject(holdPoint); // Changed from PickUp to PickUpObject
+                pickable.PickUpObject(holdPoint);
             }
+        }
+    }
+
+    void DropObject()
+    {
+        if (heldObject != null)
+        {
+            heldObject.DropObject();
+            heldObject = null;
         }
     }
 }
