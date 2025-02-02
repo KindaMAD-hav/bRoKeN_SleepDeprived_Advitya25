@@ -6,8 +6,9 @@ public class Brick : MonoBehaviour
     [SerializeField] private Vector3 pressedOffset = new Vector3(0, 0, -0.1f);
     [SerializeField] private Vector3 originalLocalPosition;
 
-    [Header("Puzzle Manager Reference")]
-    public BrickPuzzleManager puzzleManager;  // Assign in Inspector or via script.
+    [Header("Dependencies")]
+    public WireGlowController requiredWire; // Reference to the wire that needs to glow
+    public BrickPuzzleManager puzzleManager; // Assign in Inspector or via script
 
     private bool isPressed = false;
 
@@ -20,7 +21,13 @@ public class Brick : MonoBehaviour
     // This method gets called when the player interacts (clicks or uses) this brick.
     public void Interact()
     {
-        Debug.Log("interacted");
+        if (requiredWire != null && !requiredWire.isGlowing)
+        {
+            Debug.Log("The wire is not glowing. This brick cannot be interacted with.");
+            return; // Do nothing if the required wire is not glowing
+        }
+
+        Debug.Log("Interacted with the brick.");
         ToggleBrickState();
     }
 
@@ -40,7 +47,10 @@ public class Brick : MonoBehaviour
         }
 
         // Let the puzzle manager know something changed
-        puzzleManager.CheckPuzzleState();
+        if (puzzleManager != null)
+        {
+            puzzleManager.CheckPuzzleState();
+        }
     }
 
     // Optional: Provide a way for the manager to check if this brick is pressed.

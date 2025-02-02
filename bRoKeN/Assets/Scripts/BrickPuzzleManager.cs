@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class BrickPuzzleManager : MonoBehaviour
 {
@@ -10,36 +11,24 @@ public class BrickPuzzleManager : MonoBehaviour
     // true means that brick is *required* to be pressed for the puzzle to be solved
     [SerializeField] private bool[] solution;
 
-    //[Header("Door Settings")]
-    //[SerializeField] private Animator doorAnimator; // Assign the door's Animator in the Inspector
-    //[SerializeField] private string openTriggerName = "Open"; // Name of the trigger for opening the door
+    [Header("Wire Control")]
+    [SerializeField] private List<WireGlowController> wiresToTurnOn; // List of wires to toggle on when solved
 
     // A flag to prevent re-triggering the solve event multiple times if you want
     private bool puzzleSolved = false;
-    //public GameObject outroTrigger;
-    //public AudioSource doorAudioPlayer;
-    //public AudioClip doorOpen;
+
     private void Awake()
-    {
-        //outroTrigger.SetActive(false);
-    }
-    private void Start()
     {
         // Make sure each Brick references this puzzle manager
         for (int i = 0; i < bricks.Length; i++)
         {
             bricks[i].puzzleManager = this;
         }
-
-        //if (doorAnimator == null)
-        //{
-        //    Debug.LogError("Door Animator is not assigned in the Inspector!");
-        //}
     }
 
     public void CheckPuzzleState()
     {
-        // Skip checking if it�s already solved (if you don�t want multiple triggers)
+        // Skip checking if it's already solved (if you don’t want multiple triggers)
         if (puzzleSolved) return;
 
         // Compare the current brick pressed states to the solution
@@ -67,20 +56,24 @@ public class BrickPuzzleManager : MonoBehaviour
     private void OnPuzzleSolved()
     {
         Debug.Log("Puzzle solved!");
-        //outroTrigger.SetActive(true);
-        //doorAudioPlayer.PlayOneShot(doorOpen);
-        // Trigger the door's "Open" animation
-        //if (doorAnimator != null)
-        //{
-        //    doorAnimator.SetTrigger(openTriggerName);
-        //}
-        //else
-        //{
-        //    Debug.LogError("No door Animator is assigned!");
-        //}
+
+        // Turn on the wires with flickering effect
+        TurnOnWiresWithFlickering();
 
         // Additional actions (if any)
         // - Enable/disable objects
         // - Trigger other scripts
+    }
+
+    private void TurnOnWiresWithFlickering()
+    {
+        foreach (WireGlowController wire in wiresToTurnOn)
+        {
+            if (wire != null)
+            {
+                // Start the flickering coroutine for each wire
+                StartCoroutine(wire.FlickerThenGlow());
+            }
+        }
     }
 }

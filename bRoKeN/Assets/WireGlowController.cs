@@ -31,22 +31,22 @@ public class WireGlowController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (isGlowing)
-            {
-                StopAllCoroutines(); // Stop any ongoing flicker
-                SetNormalState();
-            }
-            else
-            {
-                StartCoroutine(FlickerThenGlow());
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    if (isGlowing)
+        //    {
+        //        StopAllCoroutines(); // Stop any ongoing flicker
+        //        SetNormalState();
+        //    }
+        //    else
+        //    {
+        //        StartCoroutine(FlickerThenGlow());
+        //    }
+        //}
     }
 
     // Coroutine for the flickering effect
-    private IEnumerator FlickerThenGlow()
+    public IEnumerator FlickerThenGlow()
     {
         float elapsedTime = 0f;
         PlayToggleOnSound();
