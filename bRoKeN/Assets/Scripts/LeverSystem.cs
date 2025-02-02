@@ -4,6 +4,9 @@ using System.Collections.Generic;
 public class LeverSystem : MonoBehaviour
 {
     public PowerBox powerBox;
+    public Animator trainAnimator; // Reference to the Animator component
+    public AudioSource audioSource; // Reference to the AudioSource component
+
     private Dictionary<int, bool> leverStates = new Dictionary<int, bool>();
 
     [Header("Correct Lever Sequence")]
@@ -58,6 +61,17 @@ public class LeverSystem : MonoBehaviour
             {
                 return false;
             }
+        }
+
+        // If the sequence is correct, trigger the train animation and play the audio
+        if (trainAnimator != null)
+        {
+            trainAnimator.SetTrigger("Train");
+        }
+
+        if (audioSource != null)
+        {
+            audioSource.Play(); // Play the audio clip
         }
 
         return true;
