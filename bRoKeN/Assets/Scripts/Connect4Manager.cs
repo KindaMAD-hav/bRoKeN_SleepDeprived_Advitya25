@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video; // Required for VideoPlayer
+using UnityEngine.Video;           // Required for VideoPlayer
+using UnityEngine.SceneManagement; // Required for scene management
 
 public class Connect4Manager : MonoBehaviour
 {
@@ -58,6 +59,13 @@ public class Connect4Manager : MonoBehaviour
     // This canvas should be disabled on Awake.
     public GameObject endCanvas;
 
+    // UI prompt message to tell the user to press P to return to the Main Menu.
+    // This should be disabled by default.
+    public GameObject promptMessage;
+
+    // Flag used to indicate that the win video has finished and the prompt is active.
+    private bool promptActive = false;
+
     // Internal board state where board[col, row] stores:
     // 0 = empty, 1 = player disc, 2 = computer disc.
     private int[,] board;
@@ -67,6 +75,20 @@ public class Connect4Manager : MonoBehaviour
 
     // Flag to disable player input while the computer is moving or after a win.
     private bool inputEnabled = true;
+
+    // Awake is called before Start.
+    void Awake()
+    {
+        // Ensure that the end canvas and prompt are disabled as soon as this object awakes.
+        if (endCanvas != null)
+        {
+            endCanvas.SetActive(false);
+        }
+        if (promptMessage != null)
+        {
+            promptMessage.SetActive(false);
+        }
+    }
 
     void Start()
     {
@@ -79,17 +101,21 @@ public class Connect4Manager : MonoBehaviour
             Debug.LogWarning("No AudioSource found on Connect4Manager object. Please add one.");
         }
 
-        // Ensure the end canvas is disabled on start.
-        if (endCanvas != null)
-        {
-            endCanvas.SetActive(false);
-        }
-
-        // Freeze gameplay until the required wire is turned on
+        // Freeze gameplay until the required wire is turned on.
         if (requiredWire != null && !requiredWire.isGlowing)
         {
             inputEnabled = false;
             StartCoroutine(WaitForRequiredWire());
+        }
+    }
+
+    void Update()
+    {
+        // After the video ends and the prompt is active, wait for the user to press P.
+        if (promptActive && Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("P pressed. Loading Main Menu...");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
@@ -166,7 +192,7 @@ public class Connect4Manager : MonoBehaviour
                 if (audioSource != null && playerWinSound != null)
                     audioSource.PlayOneShot(playerWinSound);
 
-                // Trigger wire flicker effect when the player wins
+                // Trigger wire flicker effect when the player wins.
                 TriggerWireFlickerEffect();
 
                 // Enable the canvas and play the win video.
@@ -180,7 +206,7 @@ public class Connect4Manager : MonoBehaviour
                     winVideo.loopPointReached += OnVideoFinished;
                 }
 
-                inputEnabled = false;  // Freeze gameplay after a win
+                inputEnabled = false;  // Freeze gameplay after a win.
                 return;
             }
 
@@ -305,10 +331,10 @@ public class Connect4Manager : MonoBehaviour
         Debug.Log("Waiting for the required wire to be turned on...");
         while (requiredWire != null && !requiredWire.isGlowing)
         {
-            yield return null; // Wait until the required wire is glowing
+            yield return null; // Wait until the required wire is glowing.
         }
         Debug.Log("Required wire is glowing! Gameplay unlocked.");
-        inputEnabled = true; // Enable gameplay
+        inputEnabled = true; // Enable gameplay.
     }
 
     // This method is called when the win video finishes playing.
@@ -321,5 +347,12 @@ public class Connect4Manager : MonoBehaviour
         {
             endCanvas.SetActive(false);
         }
+        // Activate the prompt message and set the flag.
+        if (promptMessage != null)
+        {
+            promptMessage.SetActive(true);
+        }
+        promptActive = true;
+        Debug.Log("Win video finished. Press P to go back to the Main Menu to play again.");
     }
 }
