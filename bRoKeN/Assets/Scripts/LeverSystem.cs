@@ -19,6 +19,10 @@ public class LeverSystem : MonoBehaviour
     [Tooltip("The wire that must be glowing to activate the lever system")]
     public WireGlowController requiredWire; // Reference to the wire that controls functionality
 
+    [Header("Wires to Glow on Completion")]
+    [Tooltip("List of wires that start glowing when the sequence is correct")]
+    public List<WireGlowController> wiresToGlow; // Wires to flicker and glow when the train is enabled
+
     private bool systemEnabled = false; // Tracks if the system is active
 
     private void Start()
@@ -97,7 +101,7 @@ public class LeverSystem : MonoBehaviour
             }
         }
 
-        // If the sequence is correct, trigger the train animation and play the audio
+        // If the sequence is correct, trigger the train animation, play audio, and start wire flicker
         if (trainAnimator != null)
         {
             trainAnimator.SetTrigger("Train");
@@ -107,6 +111,9 @@ public class LeverSystem : MonoBehaviour
         {
             audioSource.Play(); // Play the audio clip
         }
+
+        // Trigger wire flickering and glowing
+        TriggerWireFlickerAndGlow();
 
         return true;
     }
@@ -139,5 +146,23 @@ public class LeverSystem : MonoBehaviour
 
         Debug.Log("[LeverSystem] Required wire is glowing! System functionality enabled.");
         systemEnabled = true; // Enable the system
+    }
+
+    private void TriggerWireFlickerAndGlow()
+    {
+        if (wiresToGlow == null || wiresToGlow.Count == 0)
+        {
+            Debug.LogWarning("[LeverSystem] No wires assigned to glow on completion.");
+            return;
+        }
+
+        foreach (WireGlowController wire in wiresToGlow)
+        {
+            if (wire != null)
+            {
+                StartCoroutine(wire.FlickerThenGlow());
+                Debug.Log($"[LeverSystem] Flickering and glowing wire: {wire.name}");
+            }
+        }
     }
 }

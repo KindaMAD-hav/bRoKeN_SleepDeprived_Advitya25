@@ -3907,6 +3907,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6994937243893028966, guid: e481dc4cae097a249ac573d8d4013945, type: 3}
+--- !u!114 &147673333 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4512706531928359423, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
+  m_PrefabInstance: {fileID: 1409904748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ad8fa4af4b7114983db36c0416f620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &148635753 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4512706531928359423, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
@@ -18464,6 +18475,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ad8fa4af4b7114983db36c0416f620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &617167462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4512706531928359423, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
+  m_PrefabInstance: {fileID: 316891603}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ad8fa4af4b7114983db36c0416f620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &618295679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6638492312362419084, guid: 2d8c8a533aae81e498b7b6aa49f3675d, type: 3}
@@ -25214,6 +25236,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -951436145190073185, guid: 2d8c8a533aae81e498b7b6aa49f3675d, type: 3}
+--- !u!114 &794857931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4512706531928359423, guid: 7f5d7ab38f0b37e409eedd7aafa74294, type: 3}
+  m_PrefabInstance: {fileID: 1223086449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ad8fa4af4b7114983db36c0416f620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &796621069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1467060011618778220, guid: 2d8c8a533aae81e498b7b6aa49f3675d, type: 3}
@@ -25945,6 +25978,26 @@ PrefabInstance:
       propertyPath: trainAnimator
       value: 
       objectReference: {fileID: 1904824126}
+    - target: {fileID: 6682695195887073824, guid: 0733915e2773c0046bd735c730ba51c4, type: 3}
+      propertyPath: wiresToGlow.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682695195887073824, guid: 0733915e2773c0046bd735c730ba51c4, type: 3}
+      propertyPath: 'wiresToGlow.Array.data[0]'
+      value: 
+      objectReference: {fileID: 617167462}
+    - target: {fileID: 6682695195887073824, guid: 0733915e2773c0046bd735c730ba51c4, type: 3}
+      propertyPath: 'wiresToGlow.Array.data[1]'
+      value: 
+      objectReference: {fileID: 147673333}
+    - target: {fileID: 6682695195887073824, guid: 0733915e2773c0046bd735c730ba51c4, type: 3}
+      propertyPath: 'wiresToGlow.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1983537518}
+    - target: {fileID: 6682695195887073824, guid: 0733915e2773c0046bd735c730ba51c4, type: 3}
+      propertyPath: 'wiresToGlow.Array.data[3]'
+      value: 
+      objectReference: {fileID: 794857931}
     - target: {fileID: 8107847722393737034, guid: 0733915e2773c0046bd735c730ba51c4, type: 3}
       propertyPath: m_Name
       value: Full Lever Puzzle
@@ -62830,6 +62883,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2148408398777788535, guid: 2d8c8a533aae81e498b7b6aa49f3675d, type: 3}
+--- !u!114 &1983537518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2811066960800956791, guid: 91a3f86d829c32d49920ece1a2742cb0, type: 3}
+  m_PrefabInstance: {fileID: 1235061926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ad8fa4af4b7114983db36c0416f620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1983864158 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2811066960800956791, guid: 91a3f86d829c32d49920ece1a2742cb0, type: 3}
