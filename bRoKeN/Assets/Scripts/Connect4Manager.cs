@@ -12,7 +12,6 @@ public class Connect4Manager : MonoBehaviour
     public enum DiscType { Empty = 0, Player = 1, Computer = 2 };
 
     // A serializable class representing one column of board slots.
-    // In the Inspector, assign each column’s slots (index 0 = bottom slot, highest index = top slot).
     [System.Serializable]
     public class Column
     {
@@ -29,6 +28,11 @@ public class Connect4Manager : MonoBehaviour
     // Range for the computer’s move delay (in seconds).
     public float minDelay = 1.0f;
     public float maxDelay = 2.0f;
+
+    // Wire control for freezing gameplay
+    [Header("Wire Control")]
+    public WireGlowController requiredWire; // The wire that must be turned on to start the game
+    public List<WireGlowController> wiresToFlicker; // List of wires to flicker on player win
 
     // Audio clips for various events.
     [Tooltip("Sound played when the player places a disc.")]
@@ -59,21 +63,23 @@ public class Connect4Manager : MonoBehaviour
     {
         board = new int[numColumns, numRows];
         InitializeBoard();
-        Debug.Log("board on");
+        Debug.Log("Connect4Manager started.");
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             Debug.LogWarning("No AudioSource found on Connect4Manager object. Please add one.");
         }
+
+        // Freeze gameplay until the required wire is turned on
+        if (requiredWire != null && !requiredWire.isGlowing)
+        {
+            inputEnabled = false;
+            StartCoroutine(WaitForRequiredWire());
+        }
     }
 
-    /// <summary>
-    /// Resets the board state and clears all disc objects.
-    /// Plays the reset sound effect.
-    /// </summary>
     void InitializeBoard()
     {
-        
         for (int col = 0; col < numColumns; col++)
         {
             for (int row = 0; row < numRows; row++)
@@ -81,6 +87,7 @@ public class Connect4Manager : MonoBehaviour
                 board[col, row] = (int)DiscType.Empty;
             }
         }
+
         foreach (GameObject disc in activeDiscs)
         {
             Destroy(disc);
@@ -88,17 +95,12 @@ public class Connect4Manager : MonoBehaviour
         activeDiscs.Clear();
         inputEnabled = true;
 
-        // Play the reset sound effect.
         if (audioSource != null && resetSound != null)
         {
             audioSource.PlayOneShot(resetSound);
         }
     }
 
-    /// <summary>
-    /// Inserts a disc into a column, returning the row index where the disc was placed.
-    /// Returns -1 if the column is full.
-    /// </summary>
     int InsertDisc(int column, DiscType discType)
     {
         if (column < 0 || column >= numColumns)
@@ -107,19 +109,16 @@ public class Connect4Manager : MonoBehaviour
             return -1;
         }
 
-        // Start from the bottom slot (index 0) and move upward.
         for (int row = 0; row < numRows; row++)
         {
             if (board[column, row] == (int)DiscType.Empty)
             {
                 board[column, row] = (int)discType;
-                // Instantiate the disc prefab at the slot's position.
                 Transform slotTransform = columns[column].slots[row];
                 GameObject discPrefab = (discType == DiscType.Player) ? playerDiscPrefab : computerDiscPrefab;
                 GameObject discInstance = Instantiate(discPrefab, slotTransform.position, slotTransform.rotation);
                 activeDiscs.Add(discInstance);
 
-                // Play the appropriate disc placement sound effect.
                 if (audioSource != null)
                 {
                     if (discType == DiscType.Player && playerPlaceSound != null)
@@ -130,21 +129,14 @@ public class Connect4Manager : MonoBehaviour
                 return row;
             }
         }
-        // Column is full.
-        return -1;
+        return -1; // Column is full
     }
 
-    /// <summary>
-    /// Checks if the specified column is full (i.e. the top-most slot is occupied).
-    /// </summary>
     bool IsColumnFull(int column)
     {
         return board[column, numRows - 1] != (int)DiscType.Empty;
     }
 
-    /// <summary>
-    /// Called by your physical button script to trigger a player move.
-    /// </summary>
     public void OnColumnButtonPressed(int column)
     {
         if (!inputEnabled)
@@ -153,17 +145,19 @@ public class Connect4Manager : MonoBehaviour
         int row = InsertDisc(column, DiscType.Player);
         if (row != -1)
         {
-            // Check if the player's move completes 4 in a row.
             if (CheckWin(column, row, (int)DiscType.Player))
             {
                 Debug.Log("Player won!");
                 if (audioSource != null && playerWinSound != null)
                     audioSource.PlayOneShot(playerWinSound);
-                inputEnabled = false;  // Freeze the board so no further moves can be made.
+
+                // Trigger wire flicker effect when the player wins
+                TriggerWireFlickerEffect();
+
+                inputEnabled = false;
                 return;
             }
 
-            // If the player's move filled the top-most slot in that column, reset the board.
             if (IsColumnFull(column))
             {
                 Debug.Log("Column " + column + " is full. Resetting board.");
@@ -171,7 +165,6 @@ public class Connect4Manager : MonoBehaviour
                 return;
             }
 
-            // Disable input while the computer makes its move.
             inputEnabled = false;
             StartCoroutine(ComputerMoveCoroutine());
         }
@@ -181,9 +174,6 @@ public class Connect4Manager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Handles the computer move after a delay.
-    /// </summary>
     IEnumerator ComputerMoveCoroutine()
     {
         float delay = Random.Range(minDelay, maxDelay);
@@ -220,26 +210,17 @@ public class Connect4Manager : MonoBehaviour
                 }
             }
         }
-        // Re-enable input if no win or reset occurred.
         inputEnabled = true;
     }
 
-    /// <summary>
-    /// Waits briefly before resetting the board.
-    /// </summary>
     IEnumerator ResetBoardAfterDelay()
     {
         yield return new WaitForSeconds(1f);
         InitializeBoard();
     }
 
-    /// <summary>
-    /// Checks if there are four consecutive discs of the same type, starting from the disc placed at (column, row).
-    /// It checks horizontally, vertically, and in both diagonal directions.
-    /// </summary>
     bool CheckWin(int column, int row, int discType)
     {
-        // Direction vectors: horizontal, vertical, diagonal (up-right), and diagonal (down-right).
         int[][] directions = new int[][] {
             new int[] { 1, 0 },
             new int[] { 0, 1 },
@@ -251,9 +232,8 @@ public class Connect4Manager : MonoBehaviour
         {
             int dx = dir[0];
             int dy = dir[1];
-            int count = 1; // Count the current disc.
+            int count = 1;
 
-            // Check in the positive direction.
             int c = column + dx;
             int r = row + dy;
             while (c >= 0 && c < numColumns && r >= 0 && r < numRows && board[c, r] == discType)
@@ -263,7 +243,6 @@ public class Connect4Manager : MonoBehaviour
                 r += dy;
             }
 
-            // Check in the negative direction.
             c = column - dx;
             r = row - dy;
             while (c >= 0 && c < numColumns && r >= 0 && r < numRows && board[c, r] == discType)
@@ -277,5 +256,32 @@ public class Connect4Manager : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    private void TriggerWireFlickerEffect()
+    {
+        if (wiresToFlicker != null && wiresToFlicker.Count > 0)
+        {
+            foreach (var wire in wiresToFlicker)
+            {
+                if (wire != null)
+                    StartCoroutine(wire.FlickerThenGlow());
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No wires assigned for flicker effect!");
+        }
+    }
+
+    private IEnumerator WaitForRequiredWire()
+    {
+        Debug.Log("Waiting for the required wire to be turned on...");
+        while (requiredWire != null && !requiredWire.isGlowing)
+        {
+            yield return null; // Wait until the required wire is glowing
+        }
+        Debug.Log("Required wire is glowing! Gameplay unlocked.");
+        inputEnabled = true; // Enable gameplay
     }
 }
