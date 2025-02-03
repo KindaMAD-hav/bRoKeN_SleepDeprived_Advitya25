@@ -1,5 +1,22 @@
 # Miniature Game - "Broken Sparks" (Working Title)
 
+
+##Setup Instructions
+Follow these steps to get the game up and running on your system:
+
+1. Download the Game Package
+Locate the ZIP file: Ensure you have the game’s ZIP file (e.g., TinyTinker_BrokenSparks.zip) saved on your computer.
+Verify the file: Make sure the download completed successfully without any errors.
+2. Extract the ZIP File
+Choose your extraction tool: You can use WinRAR, 7-Zip, or any built-in extraction utility on your operating system.
+Extract the contents:
+Windows: Right-click on the ZIP file and select “Extract All…” or use your preferred extraction tool to extract the files to a destination folder of your choice.
+Mac/Linux: Use the default archive utility or your favorite extraction tool to unzip the file.
+3. Locate the Executable
+Open the extracted folder: Once extraction is complete, navigate to the folder where the files have been unpacked.
+Find the .exe file: Look for the game executable file (e.g., BrokenSparks.exe or similar). This is the file you’ll run to start the game.
+
+
 ## Overview
 *Tiny Tinker: Broken City* is a 3D miniature adventure game where you play as a tiny character inside a tabletop toy city, struggling to restore power and bring the world back to life. The city has lost its power, leaving key features like the iconic toy train inoperable. Players must solve puzzles throughout the tabletop world to restore functionality and complete the game.
 
